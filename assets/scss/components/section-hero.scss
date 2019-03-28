@@ -45,6 +45,12 @@ section.hero {
     }
   }
 
+  &__link {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   &__paragraph {
     font-size: 25px;
     letter-spacing: .17px;

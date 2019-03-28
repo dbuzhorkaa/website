@@ -25,10 +25,13 @@
             <p class="hero-panel__paragraph not-apply">{{ .Inner | markdownify }}</p>
             <a href="#" class="hero-panel__link">{{ $hrefDoc }}</a>
             <p class="hero-panel__bottom-paragraph not-apply">{{ $bottomParagraph }}</p>
-            {{ with .Page.Params.navigation }}
+            {{ $url := .Page.URL }}
+            {{ if .Page.Params.navigation }}
               <div class="hero-panel__navigation">
-                <a href="#" class="hero-panel__navigation-item not-apply active">Cloud</a>
-                <a href="#" class="hero-panel__navigation-item not-apply">On Premises</a>
+                {{ range $element := .Site.Menus.get_started }}
+                  <a href="{{ $element.URL | relURL }}"
+                     class="hero-panel__navigation-item not-apply {{ if eq $url $element.URL }}active {{ end }}">{{ $element.Name }}</a>
+                {{ end }}
               </div>
             {{ end }}
           </div>
