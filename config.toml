@@ -120,7 +120,8 @@ weight = 30
 
 [[languages.en.menu.main]]
 identifier = "Community"
-name = "COMMUNITY"
+url = "/comm/"
+name = "Community"
 weight = 40
 
 [[languages.en.menu.get_started]]

@@ -5,8 +5,7 @@ title: Pipelines
 {{% hero-panel title="Pipelines" 
                hrefTitle="Accelerators" 
                hrefDoc="Documentation" 
-               image="accellerators-details-pipeline.jpg" %}}
-{{% hero-panel title="Pipelines" hrefTitle="Accelerators" hrefDoc="Documentation" image="accelerators-details-pipeline.jpg" %}}
+               image="accelerators-details-pipeline.jpg" %}}
 Accelerators are applications built using CDAP either for specific use cases, industry verticals or personas.
 They are provided out-of-the-box with CDAP, and provide APIs and UIs that solve specific use cases.
 {{% /hero-panel %}}
@@ -16,7 +15,7 @@ Pipelines accelerator enables developers, business analysts and data scientists 
 without having to worry about infrastructure and integration.
 {{% /why %}}
 
-{{< features title="Pipeline features" >}}
+{{% features title="Pipeline features" %}}
 
 {{% plugins title="Plugins" 
             buttonTitle="View all connectors" 
