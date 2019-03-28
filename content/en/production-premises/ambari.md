@@ -1,8 +1,8 @@
 ---
-title: CDAP for Amazon EMR
-img: /images/get-started/amazon-emr.png
+title: CDAP for Ambari
+img: /images/get-started/ambari.png
 description: Installation scripts hosted on Github for running and managing CDAP on an Amazon EMR cluster.
-linkTitle: Get CDAP for Amazon EMR
+linkTitle: Get CDAP for Ambari
 link: #
 weight: 50
 ---
