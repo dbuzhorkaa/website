@@ -4,7 +4,7 @@ node_modules/
 # production
 public/
 tech-doc-hugo/
-/resources/
+# /resources/
 
 # IDE
 .idea/
