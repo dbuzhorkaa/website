@@ -1,8 +1,9 @@
 ---
-title: Google Cloud Platform
-img: /images/pipelines-plugins/google-cloud-platform.png
+title: Cloud Data Fusion on GCP
+img: /images/get-started/data-hub.svg
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
 linkTitle: Go to GCP Console
 link: #
+id: newFeature
 weight: 40
 ---

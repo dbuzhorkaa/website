@@ -1,4 +1,5 @@
 .services {
+  opacity: 0;
   &__header {
     color: $greyish-brown;
     letter-spacing: .24px;
@@ -9,26 +10,28 @@
   }
   &__subTitle {
     font-size: 14px;
-    line-height: 2;
+    line-height: 2.5;
     width: 169px;
     border-bottom: 1px solid $greyish-brown;
     margin: 0 auto;
   }
 
   &__wrapper {
-    border-left: 1px solid $gray-5;
-    &:first-child {
-      border: none;
+    height: 429px;
+    &:nth-child(3n+2), &:nth-child(3n+3) {
+      border-left: 1px solid $gray-5;
     }
     @include media-breakpoint-down(md) {
-      border: none;
+      &:nth-child(3n+2), &:nth-child(3n+3) {
+        border-left: none;
+      }
     }
   }
 
   &__block {
     color: $black;
     width: 288px;
-    min-height: 429px;
+    height: 360px;
 
     h3 {
       font-size: 25px;
@@ -37,12 +40,12 @@
     }
 
     p {
-      height: 90px;
+      height: 80px;
     }
   }
 
   &__image {
-    height: 132px;
+    height: 110px;
     width: auto;
   }
 
