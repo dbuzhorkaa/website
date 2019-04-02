@@ -77,6 +77,7 @@ logo = "/images/logo.svg"
   [params.cta]
     enable = true
     title = "Get STARTED"
+    url = "/cloud"
   [params.learnMore]
     enable = true
     title = "Learn More"
