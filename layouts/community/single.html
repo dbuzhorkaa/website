@@ -5,8 +5,8 @@
 <div class="community">
   <section class="get-connected">
     {{ $data := index .Site.Data .Site.Language.Lang }}
-    {{ with $tabs := $data.community.get_connected }}
-      {{ range $tabs }}
+    {{ with $connected := $data.community.get_connected }}
+      {{ range $connected }}
         {{ partial "components/community/get-connected" . }}
       {{ end }}
     {{ end }}
@@ -14,8 +14,8 @@
 
   <section class="contribute">
     {{ $data := index .Site.Data .Site.Language.Lang }}
-    {{ with $tabs := $data.community.contribute}}
-      {{ range $tabs }}
+    {{ with $contribute := $data.community.contribute}}
+      {{ range $contribute }}
         {{ partial "components/community/contribute" . }}
       {{ end }}
     {{ end }}
@@ -23,8 +23,8 @@
 
   <section class="twitter">
     {{ $data := index .Site.Data .Site.Language.Lang }}
-    {{ with $tabs := $data.community.twitter }}
-      {{ range $tabs }}
+    {{ with $twitter := $data.community.twitter }}
+      {{ range $twitter }}
         {{ partial "components/community/twitter" . }}
     {{ end }}
     {{ end }}

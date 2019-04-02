@@ -4,8 +4,12 @@
 
 <section>
   {{ $data := index .Site.Data .Site.Language.Lang }}
-  {{ with $features := $data.why_pipelines }}
-  {{ partial "components/why/why" . }}
+  {{ with $pipelines := $data.accelerators.pipelines }}
+  {{ range $pipelines }}
+    {{ range .why }}
+      {{ partial "components/why/why" . }}
+    {{ end }}
+  {{ end }}
   {{ end }}
 </section>
 

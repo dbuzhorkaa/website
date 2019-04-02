@@ -2,15 +2,15 @@
   <div class="get-started">
     {{ partial "components/hero-panel" . }}
     {{ $data := index .Site.Data .Site.Language.Lang }}
-    {{ with $tabs := $data.get_started.cloud }}
-      {{ range $tabs }}
+    {{ with $cloud := $data.get_started.cloud }}
+      {{ range $cloud }}
         {{ range .evaluate }}
           {{ partial "components/services/services" . }}
         {{ end }}
       {{ end }}
     {{ end }}
-    {{ with $tabs := $data.get_started.cloud }}
-      {{ range $tabs }}
+    {{ with $cloud := $data.get_started.cloud }}
+      {{ range $cloud }}
         {{ range .on_production }}
           {{ partial "components/services/services" . }}
         {{ end }}

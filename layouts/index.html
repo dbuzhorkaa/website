@@ -131,7 +131,7 @@
       <div class="row">
         <div class="col-12 text-center pb-5">
           {{ with .Site.Params.cta.title }}
-          <button class="btn-cta mt-3" onclick="location.href='/cloud'">{{ . }}</button>
+            <button class="btn-cta mt-3" onclick="location.href='/cloud'">{{ . }}</button>
           {{ end }}
         </div>
       </div>
@@ -191,11 +191,14 @@
   </div>
   <div class="container">
     <div class="row">
-      {{ range where .Site.RegularPages "Type" "in" (slice "testimonials") }}
-      <div class="col-lg-6 col-md-12 mt-5 mt-lg-4">
-        <p class="testimonials__testimonial font-italic">{{ .Content | markdownify }}</p>
-        <p class="testimonials__author">– {{ .Params.name }}, {{ .Params.job }}, {{ .Params.company }}</p>
-      </div>
+      {{ $data := index .Site.Data .Site.Language.Lang }}
+      {{ with $testimonials := $data.homepage.testimonials }}
+      {{ range $testimonials }}
+        <div class="col-lg-6 col-md-12 mt-5 mt-lg-4">
+          <p class="testimonials__testimonial font-italic">{{ .body }}</p>
+          <p class="testimonials__author">– {{ .name }}, {{ .job }}, {{ .company }}</p>
+        </div>
+      {{ end }}
       {{ end }}
     </div>
     <div class="container">
