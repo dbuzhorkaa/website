@@ -1,21 +1,13 @@
 section.announcement {
   padding: 0;
-  margin-top: 100px;
-
-  @include media-breakpoint-up(sm) {
-    margin-top: 380px;
-  }
+  margin-top: 66px;
 
   @include media-breakpoint-up(md) {
-    margin-top: 280px;
+    margin-top: 230px;
   }
 
   @include media-breakpoint-up(lg) {
-    margin-top: 0;
-  }
-
-  @include media-breakpoint-up(lg) {
-    margin-top: 80px;
+    margin-top: 49px;
   }
 }
 
