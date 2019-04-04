@@ -1,0 +1,6 @@
+DirectoryPath: ./
+CheckDoctype: false
+IgnoreInternalEmptyHash: true
+IgnoreAltMissing: true
+IgnoreURLs:
+- "example.com"
