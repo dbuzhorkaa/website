@@ -1,19 +1,14 @@
-section.announcement {
+.announcement {
   padding: 0;
   margin-top: 66px;
 
-  @include media-breakpoint-up(md) {
-    margin-top: 230px;
+  @include media-breakpoint-between(sm, md) {
+    margin-top: 210px;
   }
 
   @include media-breakpoint-up(lg) {
     margin-top: 49px;
   }
-}
-
-.announcement {
-  padding: 0 30px;
-  color: $black;
 
   &__wrapper {
     position: relative;
