@@ -36,5 +36,5 @@ install:
 
 script:
   - hugo
-  - cspell "data/**/*.json content/**/**/*.md"
+  - cspell check data/**/*.json content/**/**/*.md
   - ./bin/htmltest -c .htmltest.yml --skip-external
