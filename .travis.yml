@@ -14,6 +14,7 @@ before_install:
   - sudo snap install hugo --channel=extended
   - nvm install 10.4.0
   - git submodule update --init --recursive
+  - curl https://htmltest.wjdp.uk | bash
 
 install:
   - rm -rf public 2> /dev/null
@@ -21,6 +22,5 @@ install:
 
 script:
   - hugo
-  # TODO: enable after adding dictionary
-  - npm run test:spelling || true
-  - npm run test:links || true
+  - npm run test:spelling
+  - ./bin/htmltest
