@@ -36,5 +36,5 @@ install:
 
 script:
   - hugo
-  - cspell check data/**/*.json content/**/**/*.md
+  - npm run test:spelling
   - ./bin/htmltest -c .htmltest.yml --skip-external
