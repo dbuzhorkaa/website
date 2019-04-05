@@ -2,10 +2,6 @@
 
 {{ partial "components/hero-panel" . }}
 
-<script>
-  const pluginsList = {{ .Site.Data.en.plugins_list }}
-</script>
-
 <section class="plugins">
   <div class="container">
     <div class="row">
@@ -30,9 +26,11 @@
             <ul class="plugins-small__select-wrapper">
               {{ range .Params.select_types }}
               <li>
-                <input type="checkbox" id="{{ . }}" class="plugins-small__checkbox" name="type" value="{{ . }}" />
-                <div class="checkmark"></div>
-                <label for="{{ . }}">{{ humanize . }}</label>
+                <label for="{{ . }}">
+                  <input type="checkbox" id="{{ . }}" class="plugins-small__checkbox" name="type" value="{{ . }}"/>
+                  <div class="checkmark"></div>
+                  {{ humanize . }}
+                </label>
               </li>
               {{ end }}
             </ul>
@@ -55,7 +53,8 @@
       {{ $data := index .Site.Data .Site.Language.Lang }}
       {{ $index := -1 }}
       {{ range $plugins := $data.plugins_list }}
-      <li class="plugins-small__item mt-5 ml-auto mr-auto ml-md-0 mr-md-4" data-select="{{ lower .Type }}" data-title='{{ with (index . "Display Name") }}{{ . }}{{ end }}'>
+      <li class="plugins-small__item mt-5 ml-auto mr-auto ml-md-0 mr-md-4" data-select="{{ lower .Type }}"
+          data-title='{{ with (index . "Display Name") }}{{ . }}{{ end }}'>
         <div class="plugins-small__image">
           {{ if or (eq (index . "Icon") "N/A") (not (index . "Icon")) }}
           <img src="/images/icons/socket.png"/>
