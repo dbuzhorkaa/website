@@ -13,3 +13,6 @@ tech-doc-hugo/
 .DS_Store
 .env
 npm-debug.log*
+
+# generated files
+/scripts/tmp
