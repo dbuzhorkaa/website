@@ -4,9 +4,7 @@
   "description": "Hugo theme for technical documentation.",
   "main": "none.js",
   "scripts": {
-    "start": "hugo server -D",
-    "test:spelling": "cspell data/**/*.json content/**/**/*.md",
-    "test:links": "htmltest --conf .htmltest.yml --skip-external --log-level 3"
+    "start": "hugo server -D"
   },
   "repository": {
     "type": "git",
