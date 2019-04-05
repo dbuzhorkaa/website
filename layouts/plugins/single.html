@@ -5,7 +5,7 @@
 <section class="plugins">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-sm-12">
+      <div class="col-lg-6">
         <div class="plugins-small__field-wrapper input-group mb-3">
           <input type="text"
                  id="searchInput"
@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-6">
         <div class="plugins-small__field-wrapper input-group mb-3">
           <div class="plugins-small__chips">
           </div>
@@ -48,12 +48,12 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container mt-3">
     <ul class="plugins-small__wrapper">
       {{ $data := index .Site.Data .Site.Language.Lang }}
       {{ $index := -1 }}
       {{ range $plugins := $data.plugins_list }}
-      <li class="plugins-small__item mt-5 ml-auto mr-auto ml-md-0 mr-md-4" data-select="{{ lower .Type }}"
+      <li class="plugins-small__item mb-5 ml-auto mr-auto ml-md-0 mr-md-4" data-select="{{ lower .Type }}"
           data-title='{{ with (index . "Display Name") }}{{ . }}{{ end }}'>
         <div class="plugins-small__image">
           {{ if or (eq (index . "Icon") "N/A") (not (index . "Icon")) }}
@@ -64,7 +64,7 @@
         </div>
         {{ $index = add $index 1 }}
         <div class="plugins-small__title mt-3">{{ with (index . "Display Name") }}{{ . }}{{ end }}</div>
-        <div class="plugins-small__type mt-4">{{ with (index . "Type") }}{{ . }}{{ end }}</div>
+        <div class="plugins-small__type mt-3">{{ with (index . "Type") }}{{ . }}{{ end }}</div>
         <div class="plugins-small__cta-wrapper" onclick="toggleDetails({{$index}})">
           <a class="plugins-small__cta">View details</a>
         </div>
