@@ -169,7 +169,11 @@
   }
 
   .dropdown-item {
-    &:active {
+    path {
+      transition: all .3s;
+    }
+
+    &:hover {
       path {
         fill: $deep-orange;
       }
@@ -190,6 +194,7 @@
       letter-spacing: .29px;
       color: $greyish-brown;
       padding: 0;
+      transition: all .3s;
 
       .external-link-icon {
         margin-left: 3px;
@@ -199,7 +204,7 @@
         background: none;
       }
 
-      &:active {
+      &:hover {
         color: $deep-orange;
         background: none;
 
