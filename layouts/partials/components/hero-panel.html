@@ -22,9 +22,16 @@
             {{ with .Params.hero }}
               <a href="{{ .link_documentation_url }}" class="hero-panel__link">{{ .link_documentation_title | markdownify }}</a>
             {{ end }}
-            {{ with .Params.hero.bottom_paragraph }}
-              <p class="hero-panel__bottom-paragraph not-apply">{{ . }}</p>
-            {{ end }}
+              {{if eq .Params.type "community"}}
+                {{ $link_color := .Params.hero.link_color }}
+                <p class="hero-panel__community-paragraph not-apply pt-4">
+                  See our <a href="#" {{ with $link_color }} style="color {{ . }}" {{ end }}>code of conduct</a> to learn more.
+                </p>
+              {{ else }}
+                {{ with .Params.hero.bottom_paragraph }}
+                  <p class="hero-panel__bottom-paragraph not-apply">{{ . }}</p>
+                {{ end }}
+              {{ end }}
             {{ if .Page.Params.navigation }}
             <div class="hero-panel__navigation">
               <ul class="nav nav-tabs">

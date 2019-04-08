@@ -1,23 +1,37 @@
 .community {
   h1, h2, h3, h4 {
-    color: $greyish-brown;
+    color: $black;
   }
 
   p {
     color: $black;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.7;
     letter-spacing: 0.2px;
   }
 
   img {
-    width: unset;
-    height: 25px;
+    width: 61px;
+    max-height: 78px;
   }
 }
 
 .contribute {
   background-color: $white-15;
+
+  &__block {
+    border: solid 1px #979797;
+    background-color: $white;
+    height: 175px;
+    max-width: 383px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 .get-connected {
@@ -25,10 +39,31 @@
     display: flex;
     flex-direction: column;
     min-height: 240px;
-    border-right: solid 1px #bbbbbb;
+  }
+
+  &__paragraph {
+    min-height: 81px;
+  }
+
+  &__icon {
+    min-width: 41px;
+    min-height: 78px;
   }
 
   &__wrapper {
-    min-width: 41px;
+    padding: 0 51px;
+
+    &:nth-child(1) {
+      padding-left: 0;
+    }
+
+    &:nth-child(3n+2), &:nth-child(3n+3) {
+      border-left: 1px solid $gray-5;
+    }
+    @include media-breakpoint-down(md) {
+      &:nth-child(3n+2), &:nth-child(3n+3) {
+        border-left: none;
+      }
+    }
   }
 }
