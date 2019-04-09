@@ -27,9 +27,8 @@
               {{ end }}
             {{ end }}
               {{if eq .Params.type "community"}}
-                {{ $link_color := .Params.hero.link_color }}
                 <p class="hero-panel__community-paragraph not-apply pt-4">
-                  See our <a href="#" {{ with $link_color }} style="color {{ . }}" {{ end }}>code of conduct</a> to learn more.
+                  See our <a href="#" style="color: {{ .Params.hero.link_color }}">code of conduct</a> to learn more.
                 </p>
               {{ else }}
                 {{ with .Params.hero.bottom_paragraph }}
