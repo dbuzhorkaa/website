@@ -64,10 +64,8 @@
     {
       "title": "Plugins",
       "description": "Pipelines support a variety of plugins for connecting to cloud and onprem services as well as to perform data transformations.",
-      "btnTitle": "View all connectors",
-      "btnLink": "/plugins/#connectors",
-      "linkTitle": "View all transformations",
-      "linkUrl": "/plugins/#transformations",
+      "btnTitle": "View All Plugins",
+      "btnLink": "/resources/plugins/",
       "items": [
         {
           "title": "Google Cloud Platform",
