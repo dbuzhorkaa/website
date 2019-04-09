@@ -137,14 +137,14 @@
       "items": [
         {
           "img": "/images/get-started/noun-manual-book.svg",
-          "title": "User guide",
+          "title": "User Guide",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo iaculis ex, non rhoncus arcu blandit sed.",
           "linkTitle": "View",
           "linkUrl": "#"
         },
         {
           "img": "/images/get-started/noun-tutorial.svg",
-          "title": "Tutorial & samples",
+          "title": "Tutorial & Samples",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo iaculis ex, non rhoncus arcu blandit sed.",
           "linkTitle": "View",
           "linkUrl": "#"
