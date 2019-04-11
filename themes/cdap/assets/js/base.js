@@ -159,71 +159,69 @@ function toggleDetails(index) {
   elementClassList.contains('active') ? elementClassList.remove('active') : elementClassList.add('active');
 }
 
-const showMoreVideos = document.querySelector('#toggleBtn');
-const videos = document.querySelectorAll('.videos-page__video-block');
-const videosByDisplayShow = Array.from(videos).filter(video => video.style.display === '');
-const VIDEOS_TO_SHOW = document.querySelector('.videos-page__wrapper').dataset.videosToShow;
+if (window.location.href.match('videos')) {
+  const showMoreVideos = document.querySelector('#toggleBtn');
+  const videos = document.querySelectorAll('.videos-page__video-block');
+  const videosByDisplayShow = Array.from(videos).filter(video => video.style.display === '');
+  const VIDEOS_TO_SHOW = document.querySelector('.videos-page__wrapper').dataset.videosToShow;
 
-function showVideos(videos, display, label) {
-  Array.from(videos)
-    .map((video, index) => {
-      if (index > VIDEOS_TO_SHOW) {
-        video.style.display = display;
+  function showVideos(videos, display, label) {
+    Array.from(videos)
+      .map((video, index) => {
+        if (index > VIDEOS_TO_SHOW) {
+          video.style.display = display;
+        }
+      });
+    showMoreVideos.innerText = label;
+  }
+
+  if (showMoreVideos !== null) {
+    showMoreVideos.addEventListener('click', () => {
+      if (showMoreVideos.innerText === 'Show more') {
+        showVideos(videos, 'block', 'Show less');
+        displayQuantityInformation(videos);
+      } else {
+        showVideos(videos, 'none', 'Show more');
+        displayQuantityInformation(videosByDisplayShow);
       }
     });
-  showMoreVideos.innerText = label;
-}
+  }
 
-if (showMoreVideos !== null) {
-  showMoreVideos.addEventListener('click', () => {
-    if (showMoreVideos.innerText === 'Show more') {
-      showVideos(videos, 'block', 'Show less');
-      displayQuantityInformation(videos);
-    } else {
+  function openVideoModal(title, link) {
+    const videoModal = $('#video-modal');
+    const videoLink = $('#videoModalLink');
+    const videoTitle = $('#videoModalTitle')[0];
+
+    videoLink.attr('src', link);
+    videoTitle.innerText = title;
+    videoModal.modal('show');
+  }
+
+  function searchVideos() {
+    const searchCriteria = document.querySelector('#searchInput').value.toUpperCase().replace(/\s/g, '');
+    const result = Array.from(videos)
+      .filter(video => {
+        const title = video.dataset.title;
+        if (title.toUpperCase().replace(/\s/g, '').indexOf(searchCriteria) > -1) {
+          video.style.display = '';
+          return video;
+        } else {
+          video.style.display = 'none';
+        }
+      });
+    displayQuantityInformation(result);
+
+    searchCriteria.length > 0 && (result.length > VIDEOS_TO_SHOW || result.length < VIDEOS_TO_SHOW)
+      ? showMoreVideos.style.display = 'none'
+      : showMoreVideos.style.display = 'block';
+    if (searchCriteria.length === 0) {
       showVideos(videos, 'none', 'Show more');
       displayQuantityInformation(videosByDisplayShow);
     }
-  });
-}
-
-function openVideoModal(title, link) {
-  const videoModal = $('#video-modal');
-  const videoLink = $('#videoModalLink');
-  const videoTitle = $('#videoModalTitle')[0];
-
-  videoLink.attr('src', link);
-  videoTitle.innerText = title;
-  videoModal.modal('show');
-}
-
-function searchVideos() {
-  const searchCriteria = document.querySelector('#searchInput').value.toUpperCase().replace(/\s/g, '');
-  const result = Array.from(videos)
-    .filter(video => {
-      const title = video.dataset.title;
-      if (title.toUpperCase().replace(/\s/g, '').indexOf(searchCriteria) > -1) {
-        video.style.display = '';
-        return video;
-      } else {
-        video.style.display = 'none';
-      }
-    });
-  displayQuantityInformation(result);
-
-  searchCriteria.length > 0 && (result.length > VIDEOS_TO_SHOW || result.length < VIDEOS_TO_SHOW)
-    ? showMoreVideos.style.display = 'none'
-    : showMoreVideos.style.display = 'block';
-  if (searchCriteria.length === 0) {
-    showVideos(videos, 'none', 'Show more');
-    displayQuantityInformation(videosByDisplayShow);
+    return result;
   }
-  return result;
+  displayQuantityInformation(videosByDisplayShow);
 }
-
 if (window.location.href.match('plugins')) {
   displayQuantityInformation(plugins);
-}
-
-if (window.location.href.match('videos')) {
-  displayQuantityInformation(videosByDisplayShow);
 }
