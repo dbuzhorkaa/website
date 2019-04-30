@@ -81,7 +81,12 @@ generate_plugins () {
   python $DIR/generate-plugins/main.py $SANDBOX_EXTRACTED_DIR $MARKETPLACE_DIR -o $PLUGINS_FILE -i $IGNORE_PLUGINS_FILE
 }
 
-setup
-download_sandbox
-download_marketplace
-generate_plugins
+test_change() {
+  echo "Hello" >> $PLUGINS_FILE
+}
+
+# setup
+# download_sandbox
+# download_marketplace
+# generate_plugins
+test_change
